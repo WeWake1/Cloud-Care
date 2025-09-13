@@ -56,8 +56,7 @@ COPY --from=builder /app/dist ./dist
 COPY --chown=cloudcare:nodejs database ./database
 
 # Create and copy logs directory
-RUN mkdir -p logs
-COPY --chown=cloudcare:nodejs logs ./logs
+RUN mkdir -p logs && chown -R cloudcare:nodejs logs
 
 # Create and copy uploads directory  
 RUN mkdir -p uploads
