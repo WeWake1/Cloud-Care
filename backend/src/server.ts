@@ -153,7 +153,7 @@ class CloudCareServer {
       await connectDatabase();
       logger.info('✅ Database connected successfully');
 
-      const port = config.server.port;
+      const port = process.env.PORT || config.server.port;
       const host = config.server.host;
 
       this.server = createServer(this.app);
