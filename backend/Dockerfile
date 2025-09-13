@@ -59,8 +59,7 @@ COPY --chown=cloudcare:nodejs database ./database
 RUN mkdir -p logs && chown -R cloudcare:nodejs logs
 
 # Create and copy uploads directory  
-RUN mkdir -p uploads
-COPY --chown=cloudcare:nodejs uploads ./uploads
+RUN mkdir -p uploads && chown -R cloudcare:nodejs uploads
 
 # Switch to non-root user
 USER cloudcare
